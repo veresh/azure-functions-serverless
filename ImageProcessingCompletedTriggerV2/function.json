@@ -1,0 +1,25 @@
+{
+  "bindings": [
+    {
+      "type": "cosmosDBTrigger",
+      "name": "input",
+      "direction": "in",
+      "leaseCollectionName": "leases",
+      "connectionStringSetting": "JUNK____imageprocesscollectionTrigger_ConnectionString",
+      "databaseName": "imagedb",
+      "collectionName": "imageprocesscollection",
+      "createLeaseCollectionIfNotExists": false
+    },
+    {
+      "type": "sendGrid",
+      "name": "message",
+      "apiKey": "SENDGRID_KEY",
+      "subject": "Processing for one of the image is completed",
+      "text": "Processing for one of the image is completed",
+      "direction": "out",
+      "to": "vereshjain@gmail.com",
+      "from": "vejain@apttus.com"
+    }
+  ],
+  "disabled": false
+}

@@ -1,0 +1,28 @@
+{
+  "bindings": [
+    {
+      "name": "myBlob",
+      "type": "blobTrigger",
+      "direction": "in",
+      "path": "demov1/{blobname}.{blobextension}",
+      "connection": "vjstorageaccountdemo1_STORAGE"
+    },
+    {
+      "type": "blob",
+      "name": "croppedimage",
+      "path": "demoout/{blobname}.{blobextension}",
+      "connection": "vjstorageaccountdemo1_STORAGE",
+      "direction": "out"
+    },
+    {
+      "type": "documentDB",
+      "name": "processDocument",
+      "databaseName": "imagedb",
+      "collectionName": "imageprocesscollection",
+      "createIfNotExists": false,
+      "connection": "imagestoredbaccount_DOCUMENTDB",
+      "direction": "out"
+    }
+  ],
+  "disabled": false
+}
